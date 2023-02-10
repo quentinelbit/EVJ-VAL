@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
-{% endblock %}
+{% block title %}Titre{% endblock %}
 
 {% block body %}
     <nav>
@@ -17,18 +16,16 @@
             <li><input type="checkbox" id="dark" name="switch" role="switch"></li>
         </ul>
     </nav>
-
     <div class="grid">
-        <div>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic non iure quasi? Est qui facilis vel autem saepe a voluptatem ipsam quo quos eligendi! Nulla ducimus ratione minima corporis eius!
-            </article>
-        </div>
-        <div>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic non iure quasi? Est qui facilis vel autem saepe a voluptatem ipsam quo quos eligendi! Nulla ducimus ratione minima corporis eius!
-            </article>
-        </div>
+        <article><img src="{{ asset('build/images/1.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        <article><img src="{{ asset('build/images/1.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        <article><img src="{{ asset('build/images/1.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+    </div>
+    <div class="grid">
+        <article><img src="{{ asset('build/images/2.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        <article><img src="{{ asset('build/images/3.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        <article><img src="{{ asset('build/images/4.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        <article><img src="{{ asset('build/images/5.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
     </div>
 
     <progress id="indeterminate-progress" value="25" max="100"></progress>
