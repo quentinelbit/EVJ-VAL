@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}STAGE TIMEO{% endblock %}
+
+{% block body %}
+
+
+    <nav>
+        <ul>
+            <li><h1>Rocket League</h1></li>
+        </ul>
+        <ul>
+            <li><h1><a href="{{ path('app_timeo') }}" role="button">Acceuil</a></h1></li>
+        </ul>
+    </nav>
+    <div>
+        <article>
+            <a href="https://www.rocketleague.com/fr/"><img src="https://rocketleague.media.zestyio.com/livafalafaty.jpg?width=1440&optimize=high" alt="Photo de plage vue du dessus" /></a>
+        </article>
+
+        <article>
+            <header>
+                <strong style="color: red;">9.99€</strong>  - <s> 19.99€ </s>
+            </header>
+
+            <p><strong>
+                    Voici Rocket League !</strong>
+            </p>
+            <p>Bienvenue dans un mélange détonnant de football d'arcade et de chaos motorisé !</p>
+            <p>Personnalisez votre voiture, lancez-vous sur le terrain, et participez à l'un des jeux de sport les plus acclamés par la critique !</p>
+
+            <footer>
+                <p>Achetez-le sur
+                    <a href="https://www.rocketleague.com/fr/">Rocket League</a>
+                </p>
+            </footer>
+        </article>
+    </div>
+
+
+{% endblock %}
