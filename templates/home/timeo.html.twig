@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}STAGE TIMEO{% endblock %}
+
+{% block body %}
+    <h1>Hogwarts Legacy : L'Héritage de Poudlard</h1>
+
+
+
+    <article>
+        <img src="https://cdn1.epicgames.com/offer/e97659b501af4e3981d5430dad170911/EGS_HogwartsLegacy_AvalancheSoftware_S1_2560x1440-2baf3188eb3c1aa248bcc1af6a927b7e">
+    </article>
+
+    <article>
+        <header>
+            <b style="color:red;">54.99€</b> - <s>74.99€</s>
+        </header>
+
+        <p>Hogwarts Legacy : L'Héritage de Poudlard est un RPG d'action-aventure immersif en monde ouvert qui se déroule dans l’univers des livres Harry Potter.</p>
+        <p>
+            Pour la première fois, découvrez Poudlard dans les années 1800. <br>
+            Vous incarnez une élève détenant la clé d'un ancien secret qui menace de déchirer le monde des sorciers.
+        </p>
+        <p>
+            Vous pouvez maintenant prendre le contrôle de l'action et être au centre de votre propre aventure dans le monde des sorciers. <br>
+        </p>
+        <p>Votre héritage vous appartient. </p>
+
+        <footer>
+            Achetez-le sur <a href='https://www.fnac.com/a15934061/Hogwarts-Legacy-L-Heritage-de-Poudlard-PS4-Jeu-video-PlayStation-4?Origin=SEA_GOOGLE_PLA_LOGIC'>FNAC.COM</a>
+        </footer>
+
+    </article>
+
+
+    <form>
+        <article>
+            <header><b>Me tenir informé des nouvelles sorties</b></header>
+
+            <div class="grid">
+                <label for="firstname">
+                    Prénom
+                    <input type="text" id="firstname" name="firstname" placeholder="Prénom" required>
+                </label>
+                <label for="lastname">
+                    Nom
+                    <input type="text" id="lastname" name="lastname" placeholder="Nom" required>
+                </label>
+            </div>
+            <label for="email">Adresse Email</label>
+            <input type="email" id="email" name="email" placeholder="Adresse Email" required>
+            <select id='console'>
+                <option value="" disabled selected>Votre console</option>
+                <option>PS4</option>
+                <option>PS5</option>
+                <option>Switch</option>
+                <option>Xbox One</option>
+                <option>PC</option>
+            </select>
+            <footer>
+                <button type="submit">Envoyer</button>
+            </footer>
+        </article>
+    </form>
+{% endblock %}

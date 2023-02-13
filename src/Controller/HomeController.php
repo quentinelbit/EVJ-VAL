@@ -15,4 +15,14 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/timeo', name: 'app_timeo')]
+    public function timeo(): Response
+    {
+        return $this->render('home/timeo.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+
 }
