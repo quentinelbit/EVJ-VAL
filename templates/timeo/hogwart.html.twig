@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    HOGWARTS LEGACY
+{% endblock %}
+
+{% block body %}
+
+    <nav>
+        <ul>
+            <li><h1>Hogwarts Legacy : L'Héritage de Poudlard</h1></li>
+        </ul>
+        <ul>
+            <li><a href="{{ path('app_timeo') }}" role="button">Accueil</a>
+            </li>
+        </ul>
+    </nav>
+
+    <article>
+        <a href="https://www.fnac.com/a15934065/Hogwarts-Legacy-L-Heritage-de-Poudlard-PS5-Jeu-video-Playstation-5#int=S:player4|Home-Gene|NonApplicable|NonApplicable|BAN1|NonApplicable/"><img src="https://www.geekgeneration.fr/wp-content/uploads/2020/09/Hogwarts-Legacy-LHe%CC%81ritage-de-Poudlard.jpg" alt="Photo de plage vue du dessus"/></a>
+    </article>
+
+    <div class="grid">
+        <article>
+            <details>
+                <summary><strong> Bienvenue à Poudlard !</strong></summary>
+                <p> Hogwarts Legacy : L'Héritage de Poudlard est un RPG d'action-aventure immersif en monde ouvert qui se déroule dans l’univers des livres Harry Potter.</p>
+                <p>Pour la première fois, découvrez Poudlard dans les années 1800.</p>
+                <p> Vous incarnez une élève détenant la clé d'un ancien secret qui menace de déchirer le monde des sorciers.</p>
+                <p>Vous pouvez maintenant prendre le contrôle de l'action et être au centre de votre propre aventure dans le monde des sorciers. Votre héritage vous appartient.</p>
+            </details>
+            <p>
+                Achetez-le sur <a href="https://www.amazon.fr/HOGWARTS-LEGACY-LHERITAGE-DE-POUDLARD/dp/B09M95YJF9/ref=sr_1_5?keywords=hogwarts+legacy&qid=1676562592&sr=8-5">Amazon</a>
+                au prix de <strong style="color: red;">55.99€</strong> - <s> 69.99€ </s>
+            </p>
+        </article>
+
+        <article>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/7slKny00ZIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </article>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    APEX LEGEND
+{% endblock %}
+
+{% block body %}
+    <nav>
+        <ul>
+            <li><h1>Apex Legend</h1></li>
+        </ul>
+        <ul>
+            <li><a href="{{ path('app_timeo') }}" role="button">Accueil</a></li>
+        </ul>
+    </nav>
+
+
+    <article>
+        <a href="https://www.ea.com/fr-fr/games/apex-legends"><img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/articles/apex-legends-mobile-faq/common/apex-mobile-announce-art-3840x2160.jpg.adapt.crop16x9.575p.jpg" alt="Photo de plage vue du dessus"/></a>
+    </article>
+
+    <article>
+        <p></p>
+        <details>
+            <summary>Plus d'infomations</summary>
+            <p> Prouvez vos talents dans Apex Legends, un jeu de tir de héros gratuit où des concurrents venus de toute la Frontière combattent ensemble pour la gloire et la fortune. </p>
+        </details>
+        <p>
+            Achetez-le sur <a href="https://www.fnac.com/a12500580/Apex-Legends-Edition-Champions-Nintendo-Switch-Jeu-video-Nintendo-Switch#omnsearchpos=1">FNAC.COM</a>
+            au prix de <strong style="color: red;">4.99€</strong> - <s> 14.99€ </s>
+        </p>
+    </article>
+
+
+{% endblock %}
+
+
+
