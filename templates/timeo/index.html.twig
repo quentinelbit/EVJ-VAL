@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    ACCUEIL
+{% endblock %}
+
+{% block body %}
+
+    <h1>Découvrez des différents jeux du moment</h1>
+    <article>
+        <figure>
+            <table role="grid">
+                <thead>
+                <tr>
+                    <th scope="col">
+                        <a href="{{ path('app_timeo_hogwart') }}">Hogwarts Legacy </a>
+                    </th>
+                    <th scope="col">
+                        <a href="{{ path('app_timeo_rocket') }}">Rocket League</a>
+                    </th>
+                    <th scope="col">
+                        <a href="{{ path('app_timeo_apex') }}">Apex legend</a>
+                    </th>
+                    <th scope="col">
+                        <a href="{{ path('app_timeo_fifa23') }}">FIFA 23</a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <tr>
+                    <td>
+                        <a href="{{ path('app_timeo_hogwart') }}"><img src="https://www.geekgeneration.fr/wp-content/uploads/2020/09/Hogwarts-Legacy-LHe%CC%81ritage-de-Poudlard.jpg"></a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_timeo_rocket') }}"><img src="https://rocketleague.media.zestyio.com/livafalafaty.jpg?width=1440&optimize=high"></a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_timeo_apex') }}"><img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop16x9.1023w.jpg"></a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_timeo_fifa23') }}"><img src="https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-23/shared-assets/images/fifa-23-featured-image.png.adapt.crop191x100.1200w.png"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <header><strong style="color: red;">54.99€</strong> - <s> 74.99€ </s></header>
+                    </td>
+                    <td>
+                        <header>
+                            <strong style="color: red;">9.99€</strong> - <s> 19.99€ </s>
+                        </header>
+                    </td>
+                    <td>
+                        <header><strong style="color: red;">4.99€</strong> - <s> 14.99€ </s></header>
+                    </td>
+                    <td>
+                        <header><strong style="color: red;">34.99€</strong> - <s> 74.99€ </s></header>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PS5/PC</td>
+                    <td>SWITCH/XBOX/PS4/PS5/PC</td>
+                    <td>SWITCH/XBOX/PS4/PS5/PC</td>
+                    <td>SWITCH/PS4/PS5/PC/XBOX</td>
+                </tr>
+                </tbody>
+            </table>
+        </figure>
+
+    </article>
+
+    <form>
+        <article>
+            <header>Recevoir plus d'informations</header>
+            <label for="email">Adresse Email</label>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+            <label for="Votre console">Votre console</label> <select id="Votre console" required>
+                <option value="" selected>Votre console...</option>
+                <option>PS5</option>
+                <option>XBOX</option>
+                <option>SWITCH</option>
+                <option>PC</option>
+            </select>
+
+            <footer>
+                <button>Envoyer</button>
+            </footer>
+        </article>
+    </form>
+
+{% endblock %}
