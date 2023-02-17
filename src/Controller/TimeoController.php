@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TimeoController extends AbstractController
 {
 
-    #[Route('/tournois', name: 'app_tournois')]
+    #[Route('/timeo/tournois', name: 'app_yimeo_tournois')]
     public function tournois(): Response
     {
         return $this->render('timeo/tournois.html.twig', [
