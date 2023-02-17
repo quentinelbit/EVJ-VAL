@@ -10,7 +10,7 @@ class TimeoController extends AbstractController
 {
 
     #[Route('/tournois', name: 'app_tournois')]
-    public function index(): Response
+    public function tournois(): Response
     {
         return $this->render('timeo/tournois.html.twig', [
             'controller_name' => 'TimeoController',
