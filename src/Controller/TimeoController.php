@@ -8,6 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TimeoController extends AbstractController
 {
+
+    #[Route('/tournois', name: 'app_tournois')]
+    public function index(): Response
+    {
+        return $this->render('timeo/tournois.html.twig', [
+            'controller_name' => 'TimeoController',
+        ]);
+    }
+
     #[Route('/timeo', name: 'app_timeo')]
     public function index(): Response
     {

@@ -1,0 +1,256 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    TOURNOIS SSBU
+{% endblock %}
+
+{% block body %}
+    <h1>Tournois Smash Ultimate</h1>
+    <article>
+        <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/fr_CA/games/switch/s/super-smash-bros-ultimate-switch/hero">
+    </article>
+
+
+
+
+
+
+    <div class="grid">
+        <article>
+
+            <h2>Ajouter un participant</h2>
+            <form onsubmit="event.preventDefault()">
+                <label for="name">Pseudo</label>
+                <input type="text" id="name" name="name" />
+                <button type="button" onclick="addParticipant()">Ajouter</button>
+            </form>
+        </article>
+
+
+        <article>
+            <h2>Liste des participants</h2>
+
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Participant</th>
+                    <th scope="col">Score</th>
+                </tr>
+                </thead>
+                <tbody id="participantList">
+                </tbody>
+            </table>
+
+            <!-- <ul id="participantList"></ul> -->
+        </article>
+    </div>
+
+    <button type="button" onclick="startTournament()" id="startTournament">Commencer le tournoi</button>
+
+
+    <div class="grid">
+        <article>
+
+            <h2>Matchs</h2>
+            <ul id="matchList"></ul>
+        </article>
+
+        <article>
+            <header><center>Le grand champion est ..</center></header>
+            <div id="winner" style="display: none;">
+                <h1><center><span id="winner-name"></span> !!!</center></h1>
+
+                <img src="https://media4.giphy.com/media/2gtoSIzdrSMFO/giphy.gif?cid=ecf05e47fqzg21msuqn3l5ze3usm222qwki4exke7280kjrz&rid=giphy.gif&ct=g">
+            </div>
+        </article>
+    </div>
+
+<script>
+    var participants = [];
+    var matches = [];
+    var scores = {};
+    var results = {}; // Ajout de la variable results ici
+
+    function addParticipant() {
+        var nameInput = document.getElementById("name");
+        var name = nameInput.value;
+        if (name) {
+            participants.push(name);
+            scores[name] = 0;
+            nameInput.value = "";
+            updateParticipantList();
+        }
+    }
+
+    function updateParticipantList() {
+        var participantList = document.getElementById("participantList");
+        participantList.innerHTML = "";
+
+        // Triez le tableau des participants en fonction de leur score
+        participants.sort(function(a, b) {
+            return scores[b] - scores[a];
+        });
+
+        for (var i = 0; i < participants.length; i++) {
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            td1.textContent = participants[i];
+            td2.textContent = scores[participants[i]];
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            participantList.appendChild(tr);
+        }
+    }
+
+    function startTournament() {
+        var matchList = document.getElementById("matchList");
+        matchList.innerHTML = "";
+        for (var i = 0; i < participants.length; i++) {
+            for (var j = i + 1; j < participants.length; j++) {
+                matches.push([participants[i], participants[j]]);
+            }
+        }
+        shuffle(matches);
+        for (var i = 0; i < matches.length; i++) {
+            var div = document.createElement("div");
+            div.classList.add("grid");
+
+            for (var j = 0; j < matches[i].length; j++) {
+                var button = document.createElement("button");
+                button.textContent = matches[i][j];
+                button.addEventListener("click", function() {
+                    selectWinner(this);
+                });
+                div.appendChild(button);
+
+                if (j < matches[i].length - 1) {
+                    var vsText = document.createElement("p");
+                    vsText.textContent = "VS";
+                    vsText.style.color = "red";
+                    vsText.style.fontWeight = "bold";
+                    vsText.style.textAlign = "center";
+                    div.appendChild(vsText);
+                }
+            }
+            matchList.appendChild(div);
+        }
+        var startButton = document.getElementById("startTournament");
+        startButton.style.display = "none";
+    }
+
+    function selectWinner(winnerButton) {
+        var matchListItem = winnerButton.parentElement;
+        var matchIndex = Array.prototype.indexOf.call(matchListItem.parentNode.children, matchListItem);
+        var winnerButtons = matchListItem.querySelectorAll("button");
+        var prevWinner = results[matchIndex];
+
+        // Réactivez les boutons précédemment sélectionnés pour ce match
+        Array.from(winnerButtons).forEach(button => button.disabled = false);
+        matchListItem.classList.remove("selected");
+
+        if (prevWinner && prevWinner == winnerButton.textContent) {
+            // Si le bouton actuellement sélectionné est le même que le précédent, réinitialisez les scores des participants pour ce match
+            scores[prevWinner]--;
+            results[matchIndex] = null;
+        } else {
+            // Si le bouton actuellement sélectionné est différent du précédent, mettez à jour le score et le vainqueur pour ce match
+            if (prevWinner && prevWinner != winnerButton.textContent) {
+                scores[prevWinner]--;
+            }
+            winnerButton.disabled = true;
+            results[matchIndex] = winnerButton.textContent;
+            scores[winnerButton.textContent]++;
+            matchListItem.classList.add("selected");
+        }
+
+// Vérifiez si tous les matchs sont terminés
+        var validResults = Object.values(results).filter(function(result) {
+            return result != null;
+        });
+        if (validResults.length == matches.length) {
+            // Affichez le vainqueur lorsque tous les matchs sont terminés
+            var maxScore = Math.max(...Object.values(scores));
+            var winners = Object.keys(scores).filter(function(key) {
+                return scores[key] === maxScore;
+            });
+            if (winners.length === 1) {
+                var winnerDiv = document.getElementById("winner");
+                var winnerName = document.getElementById("winner-name");
+                winnerName.textContent = winners[0];
+                winnerDiv.style.display = "block";
+            } else {
+                // Si plusieurs participants ont le même score, créez de nouveaux matchs pour les départager
+                checkTiebreak();
+            }
+        }
+
+        updateParticipantList();
+    }
+
+    function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+
+    function checkTiebreak() {
+        var maxScore = Math.max(...Object.values(scores));
+        var winners = Object.keys(scores).filter(function(key) {
+            return scores[key] === maxScore;
+        });
+        if (winners.length > 1) {
+
+            // Si plusieurs participants ont le même score, créez de nouveaux matchs pour les départager
+            var newMatches = [];
+            for (var i = 0; i < winners.length; i++) {
+                for (var j = i + 1; j < winners.length; j++) {
+                    newMatches.push([winners[i], winners[j]]);
+                }
+            }
+            shuffle(newMatches);
+
+            var finalText = document.createElement("h1");
+            finalText.textContent = "FINAL";
+            finalText.style.color = "red";
+            finalText.style.fontWeight = "bold";
+            finalText.style.textAlign = "center";
+            var matchList = document.getElementById("matchList");
+            matchList.appendChild(finalText);
+
+            for (var i = 0; i < newMatches.length; i++) {
+                var div = document.createElement("div");
+                div.classList.add("grid");
+
+                for (var j = 0; j < newMatches[i].length; j++) {
+                    var button = document.createElement("button");
+                    button.textContent = newMatches[i][j];
+                    button.addEventListener("click", function() {
+                        selectWinner(this);
+                    });
+
+                    div.appendChild(button);
+                    if (j < newMatches[i].length - 1) {
+                        var vsText = document.createElement("p");
+                        vsText.textContent = "VS";
+                        vsText.style.color = "red";
+                        vsText.style.fontWeight = "bold";
+                        vsText.style.textAlign = "center";
+                        div.appendChild(vsText);
+                    }
+                }
+
+                matchList.appendChild(div);
+                matches.push(newMatches);
+            }
+        }
+    }
+
+</script>
+{% endblock %}
+
+
+
