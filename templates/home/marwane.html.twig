@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <nav>
+        <ul>
+            <li><h1>Progression : {{ datas.progress }} </h1></li>
+        </ul>
+        <ul>
+            <li><h1>Tentatives : {{ datas.nbTry }} </h1></li>
+        </ul>
+    </nav>
+
+    <i>Tu as su dénicher le trésor caché, mais d'autres défis t'attendent. Es-tu prêt à relever le défi ?</i>
+
+
+    <div class="grid">
+        <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
+            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '5d5b5f5f51abce75f4927f5d4c27b4d8'}) }}">
+            <article><img src="{{ asset('build/images/9f6e6800cfae7749eb6c486619254b9c.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '95752ae7395feebfd6e72f432fc11058'}) }}">
+            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
+
+
+    <article>
+        <h1>Âmes retrouvées</h1>
+
+        <div class="grid">
+            <div><img src="{{ asset('build/images/80c71ea749c4d38d7c6f09337279db33.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </article>
+
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
+    </div>
+
+
+
+
+
+{% endblock %}

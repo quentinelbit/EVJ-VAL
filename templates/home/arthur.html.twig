@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <h1>Retrouve l'âme de ton proche</h1>
+
+    <div class="grid">
+        <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
+            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '6deae9600c74845c09d69d7c8c5e5db5'}) }}">
+            <article><img src="{{ asset('build/images/80c71ea749c4d38d7c6f09337279db33.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '95752ae7395feebfd6e72f432fc11058'}) }}">
+            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><h1>Progression : {{ datas.progress }} </h1></li>
+        </ul>
+        <ul>
+            <li><h1>Tentatives : {{ datas.nbTry }} </h1></li>
+        </ul>
+    </nav>
+
+
+    <article>
+        <h1>Âmes retrouvées</h1>
+
+        <div class="grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </article>
+
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
+    </div>
+
+
+
+
+
+{% endblock %}

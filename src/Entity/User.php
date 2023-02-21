@@ -28,6 +28,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column(type: 'integer', nullable: true, options: ["default" => 0])]
+    private ?int $progress = 0;
+
+    #[ORM\Column(type: 'integer', nullable: true, options: ["default" => 3])]
+    private ?int $nbTry = 3;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +91,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getProgress(): ?int
+    {
+        return $this->progress;
+    }
+
+    public function setProgress(?int $progress): self
+    {
+        $this->progress = $progress;
+
+        return $this;
+    }
+
+    public function getNbTry(): ?int
+    {
+        return $this->nbTry;
+    }
+
+    public function setNbTry(?int $nbTry): self
+    {
+        $this->nbTry = $nbTry;
 
         return $this;
     }

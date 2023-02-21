@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>Mon cher {{ app.user.username|capitalize }}</h1>
+
+    <article>
+        <p>Un trouble inconnu trouble cette page, et un maléfice a interrompu ta progression. Signale-le moi avant de poursuivre ta quête.</p>
+        <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
+    </article>
+{% endblock %}

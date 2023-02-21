@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Titre{% endblock %}
+
+{% block body %}
+    <h1>Âmes  Égarée...</h1>
+
+    <article>
+        <p>L'âme que tu as choisi n'est pas celle que tu cherchais.</p>
+        <p>Chacune de tes tentatives est précieuse, alors utilise-les avec sagesse et prudence.</p>
+        <p>Il ne te reste que  <b>{{ datas.nbTry }}</b> essai(s) aujourd'hui.</p>
+        <footer><a href="{{ path('app_home') }}"><button>Continuer avec prudence</button></a></footer>
+    </article>
+
+
+{% endblock %}

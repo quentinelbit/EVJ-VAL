@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+
+    <h1>Trouver l'hôte de cette âme</h1>
+    <div class="grid">
+        <article><center><img src="{{ asset('build/images/'~image~'.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></center></article>
+
+        <article>
+            <div class="grid">
+                {% for i in 1..3 %}
+                    {{ form_row(attribute(form, i|e)) }}
+                {% endfor %}
+            </div>
+            <div class="grid">
+                {% for i in 4..6 %}
+                    {{ form_row(attribute(form, i|e)) }}
+                {% endfor %}
+            </div>
+            <div class="grid">
+                {% for i in 7..9 %}
+                    {{ form_row(attribute(form, i|e)) }}
+                {% endfor %}
+            </div>
+            <div class="grid">
+                {% for i in 10..12 %}
+                    {{ form_row(attribute(form, i|e)) }}
+                {% endfor %}
+            </div>
+            <div class="grid">
+                {{ form_row(attribute(form, 13|e)) }}
+            </div>
+
+        </article>
+    </div>
+
+
+
+
+
+    {{ form_end(form) }}
+{% endblock %}
