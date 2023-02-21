@@ -116,13 +116,13 @@ class HomeController extends AbstractController
             //Arthur
             case 1:
                 $good = 12;
-                $image = '80c71ea749c4d38d7c6f09337279db33';
+                $image = '1/a59097b33cdb3bf9b8991a71fe87dd65.jpg';
                 break;
 
             //Antoine
             case 2:
                 $good = 3;
-                $image = '9f6e6800cfae7749eb6c486619254b9c';
+                $image = '2/72b6986b6a13c2dcc52df763cea327af.jpg';
                 break;
 
         }
