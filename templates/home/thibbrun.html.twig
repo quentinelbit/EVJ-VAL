@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <header><i>Le courage dont tu as fait preuve a ébranlé les fondements mêmes du mystère. Mais le voyage continue.</i></header>
+
+    <article>
+        <header>Âmes retrouvées</header>
+
+        <div class="grid">
+            <div><img src="{{ asset('build/images/1/a59097b33cdb3bf9b8991a71fe87dd65.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div><img src="{{ asset('build/images/2/72b6986b6a13c2dcc52df763cea327af.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div><img src="{{ asset('build/images/3/099df458f8af1b13340cabd8882e5e80.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div><img src="{{ asset('build/images/4/d804f18bbb3b2af2c13f052e0de4c303.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <footer>
+            <nav>
+                <ul>
+                    <li>Progression : {{ datas.progress }}</li>
+                </ul>
+                <ul>
+                    <li><a href="#jeu"> Continue ▼</a></li>
+                </ul>
+                <ul>
+                    <li>Tentatives : {{ datas.nbTry }}</li>
+                </ul>
+            </nav>
+        </footer>
+    </article>
+
+
+
+    <div class="grid" id="jeu">
+        <a href="{{ path('app_check', {'check': '3a146522d768ef1c72dcf7a2af62c69e'}) }}">
+            <article><img src="{{ asset('build/images/5/abe5e7c614e7498ad7b00858430cd52d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': 'e0ef4adf94ee51c393839f4640a63080'}) }}">
+            <article><img src="{{ asset('build/images/5/a1b374a2dcc7a0535ed36688b9297221.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '03337df9a9d2af70249b9220ee306214'}) }}">
+            <article><img src="{{ asset('build/images/5/70c8028ea0c26db88ec2f5dff98744d7.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
+
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
+    </div>
+
+
+
+
+
+{% endblock %}

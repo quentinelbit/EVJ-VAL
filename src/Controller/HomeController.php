@@ -53,6 +53,9 @@ class HomeController extends AbstractController
             case 4:
                 $view = 'home/marwane.html.twig';
                 break;
+            case 5:
+                $view = 'home/thibbrun.html.twig';
+                break;
         }
 
         $datas['nbTry'] = $user->getNbTry();
@@ -141,6 +144,12 @@ class HomeController extends AbstractController
             case 4:
                 $good = 9;
                 $image = '4/d804f18bbb3b2af2c13f052e0de4c303.jpg';
+                break;
+
+            //Thibbrun
+            case 5:
+                $good = 1;
+                $image = '5/b9824d25372551e62acdb91ce103e675.jpg';
                 break;
 
         }

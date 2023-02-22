@@ -2,37 +2,14 @@
 
 {% block body %}
 
-    <h1>Retrouve l'âme de ton proche</h1>
-    <i>Ton talent est une étoile brillante dans la nuit, continue à suivre son éclat mystique.</i>
-
-
-    <div class="grid">
-        <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
-            <article><img src="{{ asset('build/images/2/aa1af59cf64ea3405feb972085a9da2d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-        <a href="{{ path('app_check', {'check': '5d5b5f5f51abce75f4927f5d4c27b4d8'}) }}">
-            <article><img src="{{ asset('build/images/2/dbcb1b62dfc32c44fd17d224821130d6.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-        <a href="{{ path('app_check', {'check': '95752ae7395feebfd6e72f432fc11058'}) }}">
-            <article><img src="{{ asset('build/images/2/f6572ee69d903b2aa53c3ae4488e898f.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-    </div>
-
-    <nav>
-        <ul>
-            <li><h1>Progression : {{ datas.progress }} </h1></li>
-        </ul>
-        <ul>
-            <li><h1>Tentatives : {{ datas.nbTry }} </h1></li>
-        </ul>
-    </nav>
-
+    <header><i>Le courage dont tu as fait preuve a ébranlé les fondements mêmes du mystère. Mais le voyage continue.</i></header>
 
     <article>
-        <h1>Âmes retrouvées</h1>
+        <header>Âmes retrouvées</header>
 
         <div class="grid">
-            <div><img src="{{ asset('build/images/1/a59097b33cdb3bf9b8991a71fe87dd65.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Arthur"><img src="{{ asset('build/images/1/a59097b33cdb3bf9b8991a71fe87dd65.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -44,7 +21,33 @@
             <div></div>
             <div></div>
         </div>
+        <footer>
+            <nav>
+                <ul>
+                    <li>Progression : {{ datas.progress }}</li>
+                </ul>
+                <ul>
+                    <li><a href="#jeu"> ▼</a></li>
+                </ul>
+                <ul>
+                    <li>Tentatives : {{ datas.nbTry }}</li>
+                </ul>
+            </nav>
+        </footer>
     </article>
+
+
+    <div class="grid" id="jeu">
+        <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
+            <article><img src="{{ asset('build/images/2/aa1af59cf64ea3405feb972085a9da2d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '5d5b5f5f51abce75f4927f5d4c27b4d8'}) }}">
+            <article><img src="{{ asset('build/images/2/dbcb1b62dfc32c44fd17d224821130d6.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '95752ae7395feebfd6e72f432fc11058'}) }}">
+            <article><img src="{{ asset('build/images/2/f6572ee69d903b2aa53c3ae4488e898f.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
 
     <div class="grid">
         <div></div>
@@ -53,9 +56,4 @@
         <div></div>
         <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
     </div>
-
-
-
-
-
 {% endblock %}

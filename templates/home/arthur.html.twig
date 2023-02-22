@@ -4,9 +4,31 @@
 
 
 
-    <h1>Retrouve l'âme de ton proche</h1>
+    <header><i>Les épreuves qui t'attendent sont obscures et insondables, mais ta détermination est ta plus grande arme.</i></header>
 
-    <div class="grid">
+    <article>
+        <header>Âmes retrouvées</header>
+
+        <div class="grid">
+            En ces lieux, les âmes que tu as sauvées trouveront refuge et sécurité, témoins silencieux de ta bravoure et de ta compassion.
+        </div>
+        <footer>
+            <nav>
+                <ul>
+                    <li>Progression : {{ datas.progress }}</li>
+                </ul>
+                <ul>
+                    <li><a href="#jeu"> Poursuivre ▼</a></li>
+                </ul>
+                <ul>
+                    <li>Tentatives : {{ datas.nbTry }}</li>
+                </ul>
+            </nav>
+        </footer>
+    </article>
+
+    <i>Le choix de ta première âme sera crucial dans ta quête. </i>
+    <div class="grid" id="jeu">
         <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
             <article><img src="{{ asset('build/images/1/9d2386146c9219060df240d5ef809c1d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
         </a>
@@ -17,33 +39,6 @@
             <article><img src="{{ asset('build/images/1/1739e0b2f43e2491b836c8b1064636bd.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
         </a>
     </div>
-    <nav>
-        <ul>
-            <li><h1>Progression : {{ datas.progress }} </h1></li>
-        </ul>
-        <ul>
-            <li><h1>Tentatives : {{ datas.nbTry }} </h1></li>
-        </ul>
-    </nav>
-
-
-    <article>
-        <h1>Âmes retrouvées</h1>
-
-        <div class="grid">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </article>
 
     <div class="grid">
         <div></div>
