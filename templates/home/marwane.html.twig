@@ -2,6 +2,21 @@
 
 {% block body %}
 
+    <h1>Retrouve l'âme de ton proche</h1>
+    <i>Ta bravoure a vaincu l'adversité, mais il reste encore des énigmes à résoudre. Sais-tu où te mènera le chemin ?</i>
+
+
+    <div class="grid">
+        <a href="{{ path('app_check', {'check': '165ccfde8c18f0a529a46c9fb0e1403f'}) }}">
+            <article><img src="{{ asset('build/images/4/f9ab7fb525eb8e806b436c858bcbca8c.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '3fe424a77729dcb3df706e7a1ba8d43a'}) }}">
+            <article><img src="{{ asset('build/images/4/6fbd17e33733f71045ac18a854250d28.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '0f2123794e5e3cac42bd76de5f4c3494'}) }}">
+            <article><img src="{{ asset('build/images/4/1eed2095bfc8e81e5f401eb7bfd93ac2.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
 
     <nav>
         <ul>
@@ -12,29 +27,14 @@
         </ul>
     </nav>
 
-    <i>Tu as su dénicher le trésor caché, mais d'autres défis t'attendent. Es-tu prêt à relever le défi ?</i>
-
-
-    <div class="grid">
-        <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
-            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-        <a href="{{ path('app_check', {'check': '5d5b5f5f51abce75f4927f5d4c27b4d8'}) }}">
-            <article><img src="{{ asset('build/images/9f6e6800cfae7749eb6c486619254b9c.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-        <a href="{{ path('app_check', {'check': '95752ae7395feebfd6e72f432fc11058'}) }}">
-            <article><img src="{{ asset('build/images/erreur.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
-        </a>
-    </div>
-
 
     <article>
         <h1>Âmes retrouvées</h1>
 
         <div class="grid">
-            <div><img src="{{ asset('build/images/80c71ea749c4d38d7c6f09337279db33.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
-            <div></div>
-            <div></div>
+            <div><img src="{{ asset('build/images/1/a59097b33cdb3bf9b8991a71fe87dd65.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div><img src="{{ asset('build/images/2/72b6986b6a13c2dcc52df763cea327af.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div><img src="{{ asset('build/images/3/099df458f8af1b13340cabd8882e5e80.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
             <div></div>
             <div></div>
             <div></div>
