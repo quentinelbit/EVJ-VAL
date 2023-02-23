@@ -56,6 +56,18 @@ class HomeController extends AbstractController
             case 5:
                 $view = 'home/thibbrun.html.twig';
                 break;
+            case 6:
+                $view = 'home/bastian.html.twig';
+                break;
+            case 7:
+                $view = 'home/quentin.html.twig';
+                break;
+            case 8:
+                $view = 'home/vivien.html.twig';
+                break;
+            case 9:
+                $view = 'home/pj.html.twig';
+                break;
         }
 
         $datas['nbTry'] = $user->getNbTry();
@@ -87,15 +99,15 @@ class HomeController extends AbstractController
     public function check($check): Response
     {
         $goodCheck = [
-            '6deae9600c74845c09d69d7c8c5e5db5',
-            '5d5b5f5f51abce75f4927f5d4c27b4d8',
-            'f2aa9d222cd44e8b1f18b1e767928c48',
-            '165ccfde8c18f0a529a46c9fb0e1403f',
-            '3a146522d768ef1c72dcf7a2af62c69e',
-            '4b9ed4d7647ad8a36b376db7d5a94b5a',
-            '0895ab03c5f7b61a9d197a7e8e578c0a',
-            '2d6d182b6e8dc6af94c0db719b28f197',
-            '7a8de1076b8497a2e91c18652fc6be22',
+            '6deae9600c74845c09d69d7c8c5e5db5', //pris
+            '5d5b5f5f51abce75f4927f5d4c27b4d8', //pris
+            'f2aa9d222cd44e8b1f18b1e767928c48', //pris
+            '165ccfde8c18f0a529a46c9fb0e1403f', //pris
+            '3a146522d768ef1c72dcf7a2af62c69e', //pris
+            '4b9ed4d7647ad8a36b376db7d5a94b5a', //pris
+            '0895ab03c5f7b61a9d197a7e8e578c0a', //pris
+            '2d6d182b6e8dc6af94c0db719b28f197', //pris
+            '7a8de1076b8497a2e91c18652fc6be22', //pris
             '902c33e4b4f9d4f57e893e338c071cf6',
             'd5a5f5e3f4753b17d150e31e9b35e3ec',
             'bb55f3d484ef6391bc672e7ca2a09f2c',
@@ -151,6 +163,32 @@ class HomeController extends AbstractController
                 $good = 1;
                 $image = '5/b9824d25372551e62acdb91ce103e675.jpg';
                 break;
+
+            //Bast
+            case 6:
+                $good = 5;
+                $image = '6/2f615086031d7c3d603c14476604478f.jpg';
+                break;
+
+            //Kent
+            case 7:
+                $good = 7;
+                $image = '7/GOOD.jpg';
+                break;
+
+            //Vivien
+            case 8:
+                $good = 13;
+                $image = '8/GOOD.jpg';
+                break;
+
+            //PJ
+            case 9:
+                $good = 11;
+                $image = '9/g7596666af6df3ac95a8d29532adb913.jpg';
+                break;
+
+
 
         }
 

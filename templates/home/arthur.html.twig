@@ -27,10 +27,12 @@
         </footer>
     </article>
 
-    <i>Le choix de ta première âme sera crucial dans ta quête. </i>
-    <div class="grid" id="jeu">
+    <i id="jeu" style="margin-bottom: 5px;">Le choix de ta première âme sera crucial dans ta quête. </i>
+    <div class="grid">
         <a href="{{ path('app_check', {'check': '185d705ec084b51ff195e5522ce4efd4'}) }}">
-            <article><img src="{{ asset('build/images/1/9d2386146c9219060df240d5ef809c1d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+            <article>
+                <img src="{{ asset('build/images/1/9d2386146c9219060df240d5ef809c1d.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8">
+            </article>
         </a>
         <a href="{{ path('app_check', {'check': '6deae9600c74845c09d69d7c8c5e5db5'}) }}">
             <article><img src="{{ asset('build/images/1/581c6d69750e15b507ebf85f987d5ada.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
