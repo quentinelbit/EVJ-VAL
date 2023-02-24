@@ -68,6 +68,15 @@ class HomeController extends AbstractController
             case 9:
                 $view = 'home/pj.html.twig';
                 break;
+            case 10:
+                $view = 'home/remi.html.twig';
+                break;
+            case 11:
+                $view = 'home/adrien.html.twig';
+                break;
+            case 12:
+                $view = 'home/nicolas.html.twig';
+                break;
         }
 
         $datas['nbTry'] = $user->getNbTry();
@@ -108,9 +117,9 @@ class HomeController extends AbstractController
             '0895ab03c5f7b61a9d197a7e8e578c0a', //pris
             '2d6d182b6e8dc6af94c0db719b28f197', //pris
             '7a8de1076b8497a2e91c18652fc6be22', //pris
-            '902c33e4b4f9d4f57e893e338c071cf6',
-            'd5a5f5e3f4753b17d150e31e9b35e3ec',
-            'bb55f3d484ef6391bc672e7ca2a09f2c',
+            '902c33e4b4f9d4f57e893e338c071cf6', //pris
+            'd5a5f5e3f4753b17d150e31e9b35e3ec', //pris
+            'bb55f3d484ef6391bc672e7ca2a09f2c', //pris
             '2702dcf9cb78869a9682921fca666394',
             'd1d41b08b6de71cf66c12e62ba9b0e9d',
             '05fc52a19cfd617afbc951e21bb8a38a',
@@ -149,7 +158,7 @@ class HomeController extends AbstractController
             //Alexandre
             case 3:
                 $good = 6;
-                $image = '3/099df458f8af1b13340cabd8882e5e80.png';
+                $image = '3/099df458f8af1b13340cabd8882e5e80.jpg';
                 break;
 
             //Marwane
@@ -186,6 +195,24 @@ class HomeController extends AbstractController
             case 9:
                 $good = 11;
                 $image = '9/g7596666af6df3ac95a8d29532adb913.jpg';
+                break;
+
+            //REMI
+            case 10:
+                $good = 2;
+                $image = '10/ad606f3aa32dd2e8f2846eb923333ab8.jpg';
+                break;
+
+            //ADRIEN
+            case 11:
+                $good = 4;
+                $image = '11/1256d7bccf598f1f6f81b30bca927a09.jpg';
+                break;
+
+            //NICO
+            case 12:
+                $good = 10;
+                $image = '12/0071c796baf44de747f923e8977b7039.jpg';
                 break;
 
 

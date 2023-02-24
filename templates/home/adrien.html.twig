@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <header><i>Ta persévérance t'a amené à la porte de la connaissance, mais il reste encore des secrets à découvrir.</i></header>
+    <header><i>Tes exploits sont connus de tous, mais la quête du mystère est sans fin.</i></header>
 
     <article>
         <header>Âmes retrouvées</header>
@@ -16,8 +16,8 @@
             <div data-tooltip="Bastian"><img src="{{ asset('build/images/6/2f615086031d7c3d603c14476604478f.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
             <div data-tooltip="Quentin"><img src="{{ asset('build/images/7/GOOD.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
             <div data-tooltip="Vivien"><img src="{{ asset('build/images/8/GOOD.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
-            <div></div>
-            <div></div>
+            <div data-tooltip="Pierre-Julien"><img src="{{ asset('build/images/9/g7596666af6df3ac95a8d29532adb913.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Rémi"><img src="{{ asset('build/images/10/ad606f3aa32dd2e8f2846eb923333ab8.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
             <div></div>
             <div></div>
         </div>
@@ -36,22 +36,17 @@
         </footer>
     </article>
 
-
-    <article id="jeu">
-        <center>
-        <a href="{{ path('app_check', {'check': '7a8de1076b8497a2e91c18652fc6be22'}) }}">
-            <img src="{{ asset('build/images/9/bfc20667a3c48391ea2c47bc8f761c27.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8; width: 600px; height: 200px">
+    <div class="grid" id="jeu">
+        <a href="{{ path('app_check', {'check': 'd5a5f5e3f4753b17d150e31e9b35e3ec'}) }}">
+            <article><img src="{{ asset('build/images/11/1d2d68bfbe41294d18406c73263ed73f.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
         </a>
-            <hr>
-        <a href="{{ path('app_check', {'check': '6ee91f79408eb6521c5a622c7d98c6d7'}) }}">
-            <img src="{{ asset('build/images/9/088783679817cafd5c8b168e9026468e.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8;width: 600px; height: 200px">
+        <a href="{{ path('app_check', {'check': '667142e7989e114387f38777c8511831'}) }}">
+            <article><img src="{{ asset('build/images/11/7d094d446806cb65e7d2ad7def5661b8.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
         </a>
-            <hr>
-        <a href="{{ path('app_check', {'check': 'c2198000e510ffad374ea707218dd99b'}) }}">
-            <img src="{{ asset('build/images/9/e0ac160d411e43201385111be8a1bd01.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8;width: 600px; height: 200px">
+        <a href="{{ path('app_check', {'check': '69b06e379f206bc3780c9ec5f5e46d39'}) }}">
+            <article><img src="{{ asset('build/images/11/8520e970caade30a39d99e3e7f53d9b8.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
         </a>
-        </center>
-    </article>
+    </div>
 
 
     <div class="grid">
