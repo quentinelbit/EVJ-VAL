@@ -77,6 +77,14 @@ class HomeController extends AbstractController
             case 12:
                 $view = 'home/nicolas.html.twig';
                 break;
+            case 13:
+                $view = 'home/thibaulth.html.twig';
+                break;
+
+            case 14:
+                $view = 'home/fini.html.twig';
+                $user->setNbTry(99);
+                break;
         }
 
         $datas['nbTry'] = $user->getNbTry();
@@ -215,7 +223,11 @@ class HomeController extends AbstractController
                 $image = '12/0071c796baf44de747f923e8977b7039.jpg';
                 break;
 
-
+            //THIBH
+            case 13:
+                $good = 8;
+                $image = '13/f3747744214e34dd1957f8fc12d4bbf9.png';
+                break;
 
         }
 
@@ -248,7 +260,6 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $clickedButton = $form->getClickedButton();
             $buttonValue = $clickedButton->getName();
-            dump($buttonValue);
 
             if ($buttonValue == $good){
                 $this->getUser()->setProgress($this->getUser()->getProgress() + 1);

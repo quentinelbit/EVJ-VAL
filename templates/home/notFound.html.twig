@@ -5,7 +5,8 @@
     <h1>Mon cher {{ app.user.username|capitalize }}</h1>
 
     <article>
-        <p>Un trouble inconnu trouble cette page, et un maléfice a interrompu ta progression. Signale-le moi avant de poursuivre ta quête.</p>
+        <p>Si tu vois cette page, c'est que je t'ai sous-estimé.</p>
+        <p>Reviens plus tard, peut-être que les ombres auront gagné du terrain.</p>
         <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
     </article>
 {% endblock %}

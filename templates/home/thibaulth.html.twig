@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <header><i>Le doigt effleure l'orée du mystère, là où la vérité se cache dans les ombres.</i></header>
+
+    <article>
+        <header>Âmes retrouvées</header>
+
+        <div class="grid">
+            <div data-tooltip="Arthur"><img src="{{ asset('build/images/1/a59097b33cdb3bf9b8991a71fe87dd65.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Antoine"><img src="{{ asset('build/images/2/72b6986b6a13c2dcc52df763cea327af.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Alexandre"><img src="{{ asset('build/images/3/099df458f8af1b13340cabd8882e5e80.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Marwane"><img src="{{ asset('build/images/4/d804f18bbb3b2af2c13f052e0de4c303.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Thibault Brun"><img src="{{ asset('build/images/5/b9824d25372551e62acdb91ce103e675.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Bastian"><img src="{{ asset('build/images/6/2f615086031d7c3d603c14476604478f.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Quentin"><img src="{{ asset('build/images/7/GOOD.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Vivien"><img src="{{ asset('build/images/8/GOOD.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Pierre-Julien"><img src="{{ asset('build/images/9/g7596666af6df3ac95a8d29532adb913.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Rémi"><img src="{{ asset('build/images/10/ad606f3aa32dd2e8f2846eb923333ab8.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Adrien"><img src="{{ asset('build/images/11/1256d7bccf598f1f6f81b30bca927a09.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div data-tooltip="Nicolas"><img src="{{ asset('build/images/12/0071c796baf44de747f923e8977b7039.jpg') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></div>
+            <div></div>
+        </div>
+        <footer>
+            <nav>
+                <ul>
+                    <li>Progression : {{ datas.progress }}</li>
+                </ul>
+                <ul>
+                    <li><a href="#jeu"> Continue ▼</a></li>
+                </ul>
+                <ul>
+                    <li>Tentatives : {{ datas.nbTry }}</li>
+                </ul>
+            </nav>
+        </footer>
+    </article>
+
+    <div class="grid" id="jeu">
+        <a href="{{ path('app_check', {'check': '4153b4bf44e024978e1edcfbd1114024'}) }}">
+            <article><img src="{{ asset('build/images/13/aaa.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '2702dcf9cb78869a9682921fca666394'}) }}">
+            <article><img src="{{ asset('build/images/13/bbb.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '0b1eae3df749750590c2e2f1cb804ef2'}) }}">
+            <article><img src="{{ asset('build/images/13/ccc.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '37a2e5e145133e9552bf0d7b537887cb'}) }}">
+            <article><img src="{{ asset('build/images/13/ddd.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': '6cb821b2d322c6c152a783fcefaabd6d'}) }}">
+            <article><img src="{{ asset('build/images/13/eee.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+        <a href="{{ path('app_check', {'check': 'f3747744214e34dd1957f8fc12d4bbf9'}) }}">
+            <article><img src="{{ asset('build/images/13/fff.png') }}" alt="photo1" class="brand-image img-circle" style="opacity: .8"></article>
+        </a>
+    </div>
+
+
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <a href="{{ path('app_reset') }}"><button>Retour au Néant</button></a>
+    </div>
+
+
+
+
+
+{% endblock %}

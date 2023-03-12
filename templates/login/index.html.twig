@@ -5,11 +5,13 @@
 
 {% block body %}
     {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div>Perdu</div>
     {% endif %}
-    <article>
+
+    <div class="grid">
+        <article>
         <form action="{{ path('app_login') }}" method="post">
-            <label for="username">Utilisateur</label>
+            <label for="username">Ton Prenom</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}">
 
             <label for="password">Mot de passe</label>
@@ -18,9 +20,22 @@
             {# If you want to control the URL the user is redirected to on success
         <input type="hidden" name="_target_path" value="/account"> #}
 
-            <button type="submit">login</button>
+            <button type="submit">Entre dans l'antre</button>
         </form>
     </article>
+    <article style="text-align: center;">
+        <p>Je suis petit, fragile et pur,</p>
+        <p>Un être innocent et bien souvent sûr.</p>
+        <p>Je suis le début de toute aventure,</p>
+        <p>Le souffle de la vie, une étincelle de nature.</p>
+        <br>
+        <p>Quel est donc ce mot qui symbolise l'innocence,</p>
+        <p>L'essence même de la vie et de l'existence ?</p>
+        <br>
+        <p>Je suis un ...</p>
+    </article>
+    </div>
+    
 
 
 {% endblock %}
